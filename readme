@@ -2,3 +2,20 @@ Kenneth Augusto
 ------------------
 Basic Database is a C program that manages records for three different tables: programming languages, operating systems, and databases. The program allows users to set up tables, insert records, delete records, modify records, and retrieve all non-deleted records from these tables.
 ------------------
+Steps of the program:
+
+Step 1: The program initializes all metadata for the three tables (programming languages, operating systems, and databases) to set  the initial counts, indices, and maximum capacities.
+Step 2: The 'setup' function dynamically allocates memory for the specified table based on the number of rows provided by the user. It initializes the metadata for the table with the provided row count.
+Step 3: The 'insert' function adds a new record to the specified table. It updates the corresponding fields of the struct at the next available index and increments the count and nextIndex metadata. If the table has insufficient capacity, an error message is printed.
+Step 4: The 'delete' function marks a record as deleted by setting an internal 'isDeleted' flag for the specified record ID. 
+Step 5: The 'modify' function updates all fields of the record that matches the specified ID. It first frees any allocated memory for the existing fields and then overwrites the record with the new data provided by the user.
+Step 6: The 'get' function prints all non-deleted records for the specified table.
+Step 7: The 'exitProgram' function frees all allocated memory for each table. It ensures that any dynamically allocated memory for strings within the structs is also freed to avoid memory leaks. 
+Step 8: The 'cmd_loop' function creates an interactive shell for user to input commands. It reads user input, splits the input into arguments, and executes the corresponding command by calling the function.
+------------------
+Example Usage:
+setup {table} {numRows}
+insert {table} {data}
+delete {table} {id}
+modify {table} {id} {data}
+get {table}
