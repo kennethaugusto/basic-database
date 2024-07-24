@@ -1,3 +1,4 @@
 Kenneth Augusto
-
-Basic Database
+------------------
+Basic Database is a C program that manages records for three different tables: programming languages, operating systems, and databases. The program allows users to set up tables, insert records, delete records, modify records, and retrieve all non-deleted records from these tables.
+------------------
